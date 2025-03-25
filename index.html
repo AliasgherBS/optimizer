@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Material Optimizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Window Material Optimizer</h1>
+            <p>Configure your windows and optimize material cutting</p>
+            <div id="api-status">Connecting to API...</div>
+        </header>
+        
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+        
+        <div class="step-container">
+            <!-- Step 1: Company Selection -->
+            <div class="step active" id="step1">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Company Selection</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Select Company</label>
+                    <select id="company" required>
+                        <option value="">Select Company</option>
+                        <!-- Options will be loaded dynamically -->
+                    </select>
+                    <div class="error-message" id="company-error">Please select a company</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="window-quantity">Quantity</label>
+                    <input type="number" id="window-quantity" min="1" value="1" placeholder="Enter quantity" required>
+                    <div class="error-message" id="window-quantity-error">Please enter a valid quantity</div>
+                </div>
+                
+                <div class="button-group">
+                    <button class="btn-next" onclick="nextStep(1)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Step 2: Outer Frame Configuration -->
+            <div class="step" id="step2">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Outer Frame Configuration</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="outer-frame-height">Outer Frame Height (ft)</label>
+                    <input type="number" id="outer-frame-height" min="0.5" step="0.1" placeholder="Enter height in feet" required>
+                    <div class="error-message" id="outer-frame-height-error">Please enter a valid height</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="outer-frame-width">Outer Frame Width (ft)</label>
+                    <input type="number" id="outer-frame-width" min="0.5" step="0.1" placeholder="Enter width in feet" required>
+                    <div class="error-message" id="outer-frame-width-error">Please enter a valid width</div>
+                </div>
+                
+                <!-- Hidden window type field -->
+                <input type="hidden" id="window-type" value="">
+                
+                <div class="form-group">
+                    <label for="out-frame">Select Outer Frame Material</label>
+                    <select id="out-frame" required onchange="updateWindowTypeFromMaterial(this)">
+                        <option value="">Select Outer Frame Material</option>
+                        <!-- Options will be loaded dynamically based on company -->
+                    </select>
+                    <div class="error-message" id="out-frame-error">Please select an outer frame material</div>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="add-border" onclick="toggleBorderSelection()">
+                    <label for="add-border">Add Border</label>
+                </div>
+                
+                <div class="form-group" id="border-selection" style="display: none;">
+                    <label for="border-material">Select Border Material</label>
+                    <select id="border-material" onchange="updateWindowTypeFromMaterial(this)">
+                        <option value="">Select Border Material</option>
+                        <!-- Options will be loaded dynamically based on company -->
+                    </select>
+                    <div class="error-message" id="border-material-error">Please select a border material</div>
+                </div>
+                
+                <div class="button-group">
+                    <button class="btn-prev" onclick="prevStep(2)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn-next" onclick="nextStep(2)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Step 3: Inner Sections Configuration -->
+            <div class="step" id="step3">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Inner Sections Configuration</div>
+                </div>
+                
+                <div id="inner-sections-container">
+                    <!-- Inner sections will be added here dynamically -->
+                    <div class="no-sections-message">Click the "Add Section" button to add inner sections to your window.</div>
+                </div>
+                
+                <button class="btn-add" onclick="addInnerSection()">
+                    <i class="fas fa-plus"></i> Add Section
+                </button>
+                
+                <div class="button-group">
+                    <button class="btn-prev" onclick="prevStep(3)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn-next" onclick="nextStep(3)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Step 4: Mullion Configuration -->
+            <div class="step" id="step4">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Mullion Configuration</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="need-mullion">Do You Need Mullions (Dividers)?</label>
+                    <select id="need-mullion" required onchange="toggleMullionConfig()">
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                    </select>
+                </div>
+                
+                <div id="mullion-config-container" style="display: none;">
+                    <h3>Mullion Configurations</h3>
+                    <div id="mullion-configs"></div>
+                    
+                    <button class="btn-add" onclick="addMullionConfig()">
+                        <i class="fas fa-plus"></i> Add Mullion
+                    </button>
+                </div>
+                
+                <div class="button-group">
+                    <button class="btn-prev" onclick="prevStep(4)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn-next" onclick="nextStep(4)">Next <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Step 5: Review & Submit -->
+            <div class="step" id="step5">
+                <div class="step-header">
+                    <div class="step-number">5</div>
+                    <div class="step-title">Review & Submit</div>
+                </div>
+                
+                <h3>Your Window Configuration</h3>
+                <div id="window-summary">
+                    <!-- Window summary will be shown here -->
+                </div>
+                
+                <div class="button-group">
+                    <button class="btn-prev" onclick="prevStep(5)"><i class="fas fa-arrow-left"></i> Previous</button>
+                    <button class="btn-add" onclick="addAnotherWindow()">
+                        <i class="fas fa-plus"></i> Add Another Window
+                    </button>
+                    <button class="btn-submit" onclick="submitConfiguration()">
+                        Calculate Optimization <i class="fas fa-calculator"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Results Section -->
+        <div id="results">
+            <div class="results-header">
+                <h2>Optimization Results</h2>
+                <button class="print-btn" onclick="window.print()">
+                    <i class="fas fa-print"></i> Print Results
+                </button>
+            </div>
+            
+            <div class="summary-box">
+                <div class="summary-item">
+                    <h3>Unique Materials</h3>
+                    <p id="total-unique-materials">0</p>
+                </div>
+                
+                <div class="summary-item">
+                    <h3>Total Rods Used</h3>
+                    <p id="total-rods">0</p>
+                </div>
+                
+                <div class="summary-item">
+                    <h3>Total Wastage (ft)</h3>
+                    <p id="total-wastage">0</p>
+                </div>
+                
+                <div class="summary-item">
+                    <h3>Cost Per Rod (PKR)</h3>
+                    <p id="total-price-rod">0</p>
+                </div>
+                
+                <div class="summary-item">
+                    <h3>Cost Per Ft (PKR)</h3>
+                    <p id="total-price-ft">0</p>
+                </div>
+                
+                <div class="summary-item">
+                    <h3>Wastage Cost (PKR)</h3>
+                    <p id="total-wastage-cost">0</p>
+                </div>
+            </div>
+            
+            <div class="material-details" id="material-details">
+                <!-- Material details will be shown here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Templates for dynamic content generation -->
+    <template id="inner-section-template">
+        <div class="inner-section">
+            <div class="section-header">
+                <h3>Section <span class="section-number"></span></h3>
+                <button type="button" class="remove-section"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="form-group">
+                <label>Section Height (ft)</label>
+                <input type="number" class="section-height" min="0.5" step="0.1" placeholder="Enter height in feet" required>
+                <div class="error-message">Please enter a valid height</div>
+            </div>
+            
+            <div class="form-group">
+                <label>Section Width (ft)</label>
+                <input type="number" class="section-width" min="0.5" step="0.1" placeholder="Enter width in feet" required>
+                <div class="error-message">Please enter a valid width</div>
+            </div>
+            
+            <div class="form-group">
+                <label>Select Inner Frame Material</label>
+                <select class="in-frame" required onchange="updateWindowTypeFromMaterial(this)">
+                    <option value="">Select Inner Frame Material</option>
+                    <!-- Options will be loaded dynamically -->
+                </select>
+                <div class="error-message">Please select an inner frame material</div>
+            </div>
+            
+            <div class="form-group">
+                <label>Select Beading Material</label>
+                <select class="beading" required onchange="updateWindowTypeFromMaterial(this)">
+                    <option value="">Select Beading Material</option>
+                    <!-- Options will be loaded dynamically -->
+                </select>
+                <div class="error-message">Please select a beading material</div>
+            </div>
+            
+            <div class="form-group checkbox-group">
+                <input type="checkbox" class="add-net-sash" onclick="toggleNetSashSelection(this)">
+                <label>Add Net Sash</label>
+            </div>
+            
+            <div class="form-group net-sash-selection" style="display: none;">
+                <label>Select Net Sash Material</label>
+                <select class="net-sash-material" onchange="updateWindowTypeFromMaterial(this)">
+                    <option value="">Select Net Sash Material</option>
+                    <!-- Options will be loaded dynamically -->
+                </select>
+                <div class="error-message">Please select a net sash material</div>
+            </div>
+        </div>
+    </template>
+    
+    <template id="mullion-config-template">
+        <div class="mullion-config">
+            <div class="mullion-group">
+                <label>Number of Mullions</label>
+                <input type="number" class="mullion-count" min="1" value="1">
+            </div>
+            <div class="mullion-group">
+                <label>Orientation</label>
+                <select class="mullion-orientation">
+                    <option value="width">Along Width</option>
+                    <option value="height">Along Height</option>
+                </select>
+            </div>
+            <div class="mullion-group">
+                <label>Select Mullion Material</label>
+                <select class="mullion-material" required onchange="updateWindowTypeFromMaterial(this)">
+                    <option value="">Select Mullion Material</option>
+                    <!-- Options will be loaded dynamically -->
+                </select>
+                <div class="error-message">Please select a mullion material</div>
+            </div>
+            <button type="button" class="remove-mullion"><i class="fas fa-times"></i></button>
+        </div>
+    </template>
+    
+    <script src="script.js"></script>
+</body>
+</html>
