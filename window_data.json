@@ -1,0 +1,692 @@
+{
+  "WizPlas": {
+    "sliding": {
+      "Sliding_80mm_OutFrames": [
+        {
+          "Code": "SP-2001",
+          "Product Description": "80mm Sliding Frame Premium",
+          "Rate/ft (PKR)": 342,
+          "Rate/19 ft Length (PKR)": 6498,
+          "Bundle Size": 6
+        },
+        {
+          "Code": "SP-2004",
+          "Product Description": "80mm Sliding Frame Supreme",
+          "Rate/ft (PKR)": 312,
+          "Rate/19 ft Length (PKR)": 5928,
+          "Bundle Size": 6
+        }
+      ],
+      "Sliding_80mm_Inframes": [
+        {
+          "Code": "SP-2012",
+          "Product Description": "55mm Sliding Sash 80 series",
+          "Rate/ft (PKR)": 197,
+          "Rate/19 ft Length (PKR)": 3743,
+          "Bundle Size": 10
+        },
+        {
+          "Code": "SP-2013",
+          "Product Description": "66mm Sliding Sash 80 series",
+          "Rate/ft (PKR)": 224,
+          "Rate/19 ft Length (PKR)": 4256,
+          "Bundle Size": 10
+        }
+      ],
+      "Sliding_80mm_Mullions": [
+        {
+          "Code": "SP-2015",
+          "Product Description": "Sliding Sash Mullion 80 series",
+          "Rate/ft (PKR)": 186,
+          "Rate/19 ft Length (PKR)": 3534,
+          "Bundle Size": 10
+        },
+        {
+          "Code": "SP-2003",
+          "Product Description": "Fixed Mullion 80 series",
+          "Rate/ft (PKR)": 289,
+          "Rate/19 ft Length (PKR)": 5491,
+          "Bundle Size": 8
+        }
+      ],
+      "Sliding_80mm_Beading": [
+        {
+          "Code": "SP-2022",
+          "Product Description": "Sliding Beading Single Glass (Round) 80 series",
+          "Rate/ft (PKR)": 53,
+          "Rate/19 ft Length (PKR)": 1007,
+          "Bundle Size": 10
+        },
+        {
+          "Code": "SP-2021",
+          "Product Description": "Sliding Beading Double Glass 80 series",
+          "Rate/ft (PKR)": 36,
+          "Rate/19 ft Length (PKR)": 684,
+          "Bundle Size": 20
+        }
+      ],
+      "Sliding_80mm_Border": [
+        {
+          "Code": "AUX-4021",
+          "Product Description": "T-Closing/Border Profile",
+          "Rate/ft (PKR)": 80,
+          "Rate/19 ft Length (PKR)": 1520,
+          "Bundle Size": 20
+        },
+        {
+          "Code": "SP-2023",
+          "Product Description": "Interlock 80 Series",
+          "Rate/ft (PKR)": 54,
+          "Rate/19 ft Length (PKR)": 1026,
+          "Bundle Size": 30
+        }
+      ],
+      "Sliding_80mm_NetSash": [
+        {
+          "Code": "SP-2014",
+          "Product Description": "Sliding Net Sash 80/88 series",
+          "Rate/ft (PKR)": 112,
+          "Rate/19 ft Length (PKR)": 2128,
+          "Bundle Size": 6
+        },
+        {
+          "Code": "SP-2016",
+          "Product Description": "Sliding Net Sash Mullion 80/88 series",
+          "Rate/ft (PKR)": 112,
+          "Rate/19 ft Length (PKR)": 2128,
+          "Bundle Size": 6
+        }
+      ]
+    },
+    "openable": {
+      "Openable_60mm_OutFrames": [
+        {
+          "Code": "OP-1001",
+          "Product Description": "60mm Openable Frame",
+          "Rate/ft (PKR)": 282,
+          "Rate/19 ft Length (PKR)": 5358,
+          "Bundle Size": 8
+        },
+        {
+          "Code": "OP-1002",
+          "Product Description": "60mm Openable Mullion",
+          "Rate/ft (PKR)": 311,
+          "Rate/19 ft Length (PKR)": 5909,
+          "Bundle Size": 6
+        }
+      ],
+      "Openable_60mm_Inframes": [
+        {
+          "Code": "OP-1011",
+          "Product Description": "Inward Window Sash",
+          "Rate/ft (PKR)": 325,
+          "Rate/19 ft Length (PKR)": 6175,
+          "Bundle Size": 4
+        },
+        {
+          "Code": "OP-1012",
+          "Product Description": "Outward Window Sash",
+          "Rate/ft (PKR)": 331,
+          "Rate/19 ft Length (PKR)": 6289,
+          "Bundle Size": 4
+        }
+      ],
+      "Openable_60mm_Mullions": [
+        {
+          "Code": "OP-1002",
+          "Product Description": "60mm Openable Mullion",
+          "Rate/ft (PKR)": 311,
+          "Rate/19 ft Length (PKR)": 5909,
+          "Bundle Size": 6
+        },
+        {
+          "Code": "OP-1032",
+          "Product Description": "Flush Door Mullion",
+          "Rate/ft (PKR)": 236,
+          "Rate/19 ft Length (PKR)": 4484,
+          "Bundle Size": 6
+        }
+      ],
+      "Openable_60mm_Beading": [
+        {
+          "Code": "OP-1023",
+          "Product Description": "Openable Beading Single Glass",
+          "Rate/ft (PKR)": 89,
+          "Rate/19 ft Length (PKR)": 1691,
+          "Bundle Size": 8
+        },
+        {
+          "Code": "OP-1022",
+          "Product Description": "Openable Beading Double Glass",
+          "Rate/ft (PKR)": 70,
+          "Rate/19 ft Length (PKR)": 1330,
+          "Bundle Size": 16
+        }
+      ],
+      "Openable_60mm_Border": [
+        {
+          "Code": "AUX-4021",
+          "Product Description": "T-Closing/Border Profile",
+          "Rate/ft (PKR)": 80,
+          "Rate/19 ft Length (PKR)": 1520,
+          "Bundle Size": 20
+        },
+        {
+          "Code": "AUX-4022",
+          "Product Description": "Georgian Bar",
+          "Rate/ft (PKR)": 74,
+          "Rate/19 ft Length (PKR)": 1406,
+          "Bundle Size": 50
+        }
+      ],
+      "Openable_60mm_NetSash": [
+        {
+          "Code": "OP-1016",
+          "Product Description": "Openable Net Sash",
+          "Rate/ft (PKR)": 143,
+          "Rate/19 ft Length (PKR)": 2717,
+          "Bundle Size": 8
+        },
+        {
+          "Code": "OP-1015",
+          "Product Description": "Door Panel",
+          "Rate/ft (PKR)": 161,
+          "Rate/19 ft Length (PKR)": 3059,
+          "Bundle Size": 10
+        }
+      ]
+    },
+    "fixed": {
+      "Fixed_80mm_OutFrames": [
+        {
+          "Code": "SP-2002",
+          "Product Description": "Fixed Frame 80 series",
+          "Rate/ft (PKR)": 250,
+          "Rate/19 ft Length (PKR)": 4750,
+          "Bundle Size": 8
+        },
+        {
+          "Code": "SP-2001",
+          "Product Description": "80mm Sliding Frame Premium (for fixed)",
+          "Rate/ft (PKR)": 342,
+          "Rate/19 ft Length (PKR)": 6498,
+          "Bundle Size": 6
+        }
+      ],
+      "Fixed_80mm_Inframes": [
+        {
+          "Code": "SP-2012",
+          "Product Description": "55mm Sliding Sash 80 series (for fixed)",
+          "Rate/ft (PKR)": 197,
+          "Rate/19 ft Length (PKR)": 3743,
+          "Bundle Size": 10
+        },
+        {
+          "Code": "SP-2013",
+          "Product Description": "66mm Sliding Sash 80 series (for fixed)",
+          "Rate/ft (PKR)": 224,
+          "Rate/19 ft Length (PKR)": 4256,
+          "Bundle Size": 10
+        }
+      ],
+      "Fixed_80mm_Mullions": [
+        {
+          "Code": "SP-2003",
+          "Product Description": "Fixed Mullion 80 series",
+          "Rate/ft (PKR)": 289,
+          "Rate/19 ft Length (PKR)": 5491,
+          "Bundle Size": 8
+        },
+        {
+          "Code": "SP-2015",
+          "Product Description": "Sliding Sash Mullion 80 series (for fixed)",
+          "Rate/ft (PKR)": 186,
+          "Rate/19 ft Length (PKR)": 3534,
+          "Bundle Size": 10
+        }
+      ],
+      "Fixed_80mm_Beading": [
+        {
+          "Code": "SP-2022",
+          "Product Description": "Sliding Beading Single Glass (Round) 80 series",
+          "Rate/ft (PKR)": 53,
+          "Rate/19 ft Length (PKR)": 1007,
+          "Bundle Size": 10
+        },
+        {
+          "Code": "SP-2021",
+          "Product Description": "Sliding Beading Double Glass 80 series",
+          "Rate/ft (PKR)": 36,
+          "Rate/19 ft Length (PKR)": 684,
+          "Bundle Size": 20
+        }
+      ],
+      "Fixed_80mm_Border": [
+        {
+          "Code": "AUX-4021",
+          "Product Description": "T-Closing/Border Profile",
+          "Rate/ft (PKR)": 80,
+          "Rate/19 ft Length (PKR)": 1520,
+          "Bundle Size": 20
+        },
+        {
+          "Code": "AUX-4022",
+          "Product Description": "Georgian Bar",
+          "Rate/ft (PKR)": 74,
+          "Rate/19 ft Length (PKR)": 1406,
+          "Bundle Size": 50
+        }
+      ],
+      "Fixed_80mm_NetSash": [
+        {
+          "Code": "SP-2014",
+          "Product Description": "Sliding Net Sash 80/88 series (for fixed)",
+          "Rate/ft (PKR)": 112,
+          "Rate/19 ft Length (PKR)": 2128,
+          "Bundle Size": 6
+        },
+        {
+          "Code": "SP-2016",
+          "Product Description": "Sliding Net Sash Mullion 80/88 series (for fixed)",
+          "Rate/ft (PKR)": 112,
+          "Rate/19 ft Length (PKR)": 2128,
+          "Bundle Size": 6
+        }
+      ]
+    }
+  },
+  "Europrofilo": {
+    "sliding": {
+      "Sliding_80mm_OutFrames": [
+        {
+          "Code": "SP-2001",
+          "Product Description": "80mm Sliding Frame Premium",
+          "Rate/ft (PKR)": 366,
+          "Rate/19 ft Length (PKR)": 6954,
+          "Bundle Size": 6
+        },
+        {
+          "Code": "SP-2004",
+          "Product Description": "80mm Sliding Frame Supreme",
+          "Rate/ft (PKR)": 329,
+          "Rate/19 ft Length (PKR)": 6251,
+          "Bundle Size": 6
+        }
+      ],
+      "Sliding_80mm_Inframes": [
+        {
+          "Code": "SP-2012",
+          "Product Description": "55mm Sliding Sash 80 series",
+          "Rate/ft (PKR)": 217,
+          "Rate/19 ft Length (PKR)": 4123,
+          "Bundle Size": 10
+        },
+        {
+          "Code": "SP-2013",
+          "Product Description": "66mm Sliding Sash 80 series",
+          "Rate/ft (PKR)": 242,
+          "Rate/19 ft Length (PKR)": 4598,
+          "Bundle Size": 10
+        }
+      ],
+      "Sliding_80mm_Mullions": [
+        {
+          "Code": "SP-2015",
+          "Product Description": "Sliding Sash Mullion 80 series",
+          "Rate/ft (PKR)": 187,
+          "Rate/19 ft Length (PKR)": 3553,
+          "Bundle Size": 10
+        },
+        {
+          "Code": "SP-2003",
+          "Product Description": "Fixed Mullion 80 series",
+          "Rate/ft (PKR)": 289,
+          "Rate/19 ft Length (PKR)": 5491,
+          "Bundle Size": 8
+        }
+      ],
+      "Sliding_80mm_Beading": [
+        {
+          "Code": "SP-2022",
+          "Product Description": "Sliding Beading Single Glass (Round) 80 series",
+          "Rate/ft (PKR)": 53,
+          "Rate/19 ft Length (PKR)": 1007,
+          "Bundle Size": 10
+        },
+        {
+          "Code": "SP-2021",
+          "Product Description": "Sliding Beading Double Glass 80 series",
+          "Rate/ft (PKR)": 36,
+          "Rate/19 ft Length (PKR)": 684,
+          "Bundle Size": 20
+        }
+      ],
+      "Sliding_80mm_Border": [
+        {
+          "Code": "AUX-4021",
+          "Product Description": "T-Closing/Border Profile",
+          "Rate/ft (PKR)": 80,
+          "Rate/19 ft Length (PKR)": 1520,
+          "Bundle Size": 20
+        },
+        {
+          "Code": "SP-2023",
+          "Product Description": "Interlock 80 Series",
+          "Rate/ft (PKR)": 54,
+          "Rate/19 ft Length (PKR)": 1026,
+          "Bundle Size": 30
+        }
+      ],
+      "Sliding_80mm_NetSash": [
+        {
+          "Code": "SP-2014",
+          "Product Description": "Sliding Net Sash 80/88 series",
+          "Rate/ft (PKR)": 122,
+          "Rate/19 ft Length (PKR)": 2318,
+          "Bundle Size": 6
+        },
+        {
+          "Code": "SP-2016",
+          "Product Description": "Sliding Net Sash Mullion 80/88 series",
+          "Rate/ft (PKR)": 123,
+          "Rate/19 ft Length (PKR)": 2337,
+          "Bundle Size": 6
+        }
+      ]
+    },
+    "sliding_98mm": {
+      "Sliding_98mm_OutFrames": [
+        {
+          "Code": "SP-5001",
+          "Product Description": "98mm Sliding Frame",
+          "Rate/ft (PKR)": 388,
+          "Rate/19 ft Length (PKR)": 7372,
+          "Bundle Size": 6
+        },
+        {
+          "Code": "SP-5011",
+          "Product Description": "66mm Sliding Sash 88/98 series",
+          "Rate/ft (PKR)": 267,
+          "Rate/19 ft Length (PKR)": 5073,
+          "Bundle Size": 10
+        }
+      ],
+      "Sliding_98mm_Inframes": [
+        {
+          "Code": "SP-5011",
+          "Product Description": "66mm Sliding Sash 88/98 series",
+          "Rate/ft (PKR)": 267,
+          "Rate/19 ft Length (PKR)": 5073,
+          "Bundle Size": 10
+        },
+        {
+          "Code": "SP-5012",
+          "Product Description": "88mm Sliding Sash 88/98 series",
+          "Rate/ft (PKR)": 340,
+          "Rate/19 ft Length (PKR)": 6460,
+          "Bundle Size": 8
+        }
+      ],
+      "Sliding_98mm_Mullions": [
+        {
+          "Code": "SP-2015",
+          "Product Description": "Sliding Sash Mullion 80 series (for 98mm)",
+          "Rate/ft (PKR)": 187,
+          "Rate/19 ft Length (PKR)": 3553,
+          "Bundle Size": 10
+        },
+        {
+          "Code": "SP-2003",
+          "Product Description": "Fixed Mullion 80 series (for 98mm)",
+          "Rate/ft (PKR)": 289,
+          "Rate/19 ft Length (PKR)": 5491,
+          "Bundle Size": 8
+        }
+      ],
+      "Sliding_98mm_Beading": [
+        {
+          "Code": "SP-5021",
+          "Product Description": "Sliding Beading Single Glass 88/98 series",
+          "Rate/ft (PKR)": 63,
+          "Rate/19 ft Length (PKR)": 1197,
+          "Bundle Size": 10
+        },
+        {
+          "Code": "SP-5022",
+          "Product Description": "Sliding Beading Double Glass 88/98 series",
+          "Rate/ft (PKR)": 47,
+          "Rate/19 ft Length (PKR)": 893,
+          "Bundle Size": 20
+        }
+      ],
+      "Sliding_98mm_Border": [
+        {
+          "Code": "SP-5024",
+          "Product Description": "Interlock for 66mm sash 88/98 series",
+          "Rate/ft (PKR)": 64,
+          "Rate/19 ft Length (PKR)": 1216,
+          "Bundle Size": 30
+        },
+        {
+          "Code": "SP-5025",
+          "Product Description": "Interlock for 88mm sash 88/98 series",
+          "Rate/ft (PKR)": 69,
+          "Rate/19 ft Length (PKR)": 1311,
+          "Bundle Size": 20
+        }
+      ],
+      "Sliding_98mm_NetSash": [
+        {
+          "Code": "SP-5014",
+          "Product Description": "Premium Net Sash 98 series",
+          "Rate/ft (PKR)": 185,
+          "Rate/19 ft Length (PKR)": 3515,
+          "Bundle Size": 6
+        },
+        {
+          "Code": "SP-3023",
+          "Product Description": "80 to 88/98 Interlock",
+          "Rate/ft (PKR)": 99,
+          "Rate/19 ft Length (PKR)": 1881,
+          "Bundle Size": 20
+        }
+      ]
+    },
+    "openable": {
+      "Openable_60mm_OutFrames": [
+        {
+          "Code": "OP-1001",
+          "Product Description": "60mm Openable Frame",
+          "Rate/ft (PKR)": 296,
+          "Rate/19 ft Length (PKR)": 5624,
+          "Bundle Size": 8
+        },
+        {
+          "Code": "OP-6001",
+          "Product Description": "70mm Openable Frame",
+          "Rate/ft (PKR)": 356,
+          "Rate/19 ft Length (PKR)": 6764,
+          "Bundle Size": 8
+        }
+      ],
+      "Openable_60mm_Inframes": [
+        {
+          "Code": "OP-1011",
+          "Product Description": "Inward Window Sash",
+          "Rate/ft (PKR)": 339,
+          "Rate/19 ft Length (PKR)": 6441,
+          "Bundle Size": 4
+        },
+        {
+          "Code": "OP-1012",
+          "Product Description": "Outward Window Sash",
+          "Rate/ft (PKR)": 343,
+          "Rate/19 ft Length (PKR)": 6517,
+          "Bundle Size": 4
+        }
+      ],
+      "Openable_60mm_Mullions": [
+        {
+          "Code": "OP-1002",
+          "Product Description": "60mm Openable Mullion",
+          "Rate/ft (PKR)": 330,
+          "Rate/19 ft Length (PKR)": 6270,
+          "Bundle Size": 6
+        },
+        {
+          "Code": "OP-6002",
+          "Product Description": "70mm Openable Mullion",
+          "Rate/ft (PKR)": 386,
+          "Rate/19 ft Length (PKR)": 7334,
+          "Bundle Size": 6
+        }
+      ],
+      "Openable_60mm_Beading": [
+        {
+          "Code": "OP-1023",
+          "Product Description": "Openable Beading Single Glass",
+          "Rate/ft (PKR)": 89,
+          "Rate/19 ft Length (PKR)": 1691,
+          "Bundle Size": 8
+        },
+        {
+          "Code": "OP-1022",
+          "Product Description": "Openable Beading Double Glass",
+          "Rate/ft (PKR)": 70,
+          "Rate/19 ft Length (PKR)": 1330,
+          "Bundle Size": 16
+        }
+      ],
+      "Openable_60mm_Border": [
+        {
+          "Code": "AUX-4021",
+          "Product Description": "T-Closing/Border Profile",
+          "Rate/ft (PKR)": 80,
+          "Rate/19 ft Length (PKR)": 1520,
+          "Bundle Size": 20
+        },
+        {
+          "Code": "AUX-4022",
+          "Product Description": "Georgian Bar",
+          "Rate/ft (PKR)": 74,
+          "Rate/19 ft Length (PKR)": 1406,
+          "Bundle Size": 50
+        }
+      ],
+      "Openable_60mm_NetSash": [
+        {
+          "Code": "OP-1016",
+          "Product Description": "Openable Net Sash",
+          "Rate/ft (PKR)": 154,
+          "Rate/19 ft Length (PKR)": 2926,
+          "Bundle Size": 8
+        },
+        {
+          "Code": "OP-1015",
+          "Product Description": "Door Panel",
+          "Rate/ft (PKR)": 174,
+          "Rate/19 ft Length (PKR)": 3306,
+          "Bundle Size": 10
+        }
+      ]
+    },
+    "fixed": {
+      "Fixed_80mm_OutFrames": [
+        {
+          "Code": "SP-2002",
+          "Product Description": "Fixed Frame 80 series",
+          "Rate/ft (PKR)": 258,
+          "Rate/19 ft Length (PKR)": 4902,
+          "Bundle Size": 8
+        },
+        {
+          "Code": "SP-2001",
+          "Product Description": "80mm Sliding Frame Premium (for fixed)",
+          "Rate/ft (PKR)": 366,
+          "Rate/19 ft Length (PKR)": 6954,
+          "Bundle Size": 6
+        }
+      ],
+      "Fixed_80mm_Inframes": [
+        {
+          "Code": "SP-2012",
+          "Product Description": "55mm Sliding Sash 80 series (for fixed)",
+          "Rate/ft (PKR)": 217,
+          "Rate/19 ft Length (PKR)": 4123,
+          "Bundle Size": 10
+        },
+        {
+          "Code": "SP-2013",
+          "Product Description": "66mm Sliding Sash 80 series (for fixed)",
+          "Rate/ft (PKR)": 242,
+          "Rate/19 ft Length (PKR)": 4598,
+          "Bundle Size": 10
+        }
+      ],
+      "Fixed_80mm_Mullions": [
+        {
+          "Code": "SP-2003",
+          "Product Description": "Fixed Mullion 80 series",
+          "Rate/ft (PKR)": 289,
+          "Rate/19 ft Length (PKR)": 5491,
+          "Bundle Size": 8
+        },
+        {
+          "Code": "SP-2015",
+          "Product Description": "Sliding Sash Mullion 80 series (for fixed)",
+          "Rate/ft (PKR)": 187,
+          "Rate/19 ft Length (PKR)": 3553,
+          "Bundle Size": 10
+        }
+      ],
+      "Fixed_80mm_Beading": [
+        {
+          "Code": "SP-2022",
+          "Product Description": "Sliding Beading Single Glass (Round) 80 series",
+          "Rate/ft (PKR)": 53,
+          "Rate/19 ft Length (PKR)": 1007,
+          "Bundle Size": 10
+        },
+        {
+          "Code": "SP-2021",
+          "Product Description": "Sliding Beading Double Glass 80 series",
+          "Rate/ft (PKR)": 36,
+          "Rate/19 ft Length (PKR)": 684,
+          "Bundle Size": 20
+        }
+      ],
+      "Fixed_80mm_Border": [
+        {
+          "Code": "AUX-4021",
+          "Product Description": "T-Closing/Border Profile",
+          "Rate/ft (PKR)": 80,
+          "Rate/19 ft Length (PKR)": 1520,
+          "Bundle Size": 20
+        },
+        {
+          "Code": "AUX-4022",
+          "Product Description": "Georgian Bar",
+          "Rate/ft (PKR)": 74,
+          "Rate/19 ft Length (PKR)": 1406,
+          "Bundle Size": 50
+        }
+      ],
+      "Fixed_80mm_NetSash": [
+        {
+          "Code": "SP-2014",
+          "Product Description": "Sliding Net Sash 80/88 series (for fixed)",
+          "Rate/ft (PKR)": 122,
+          "Rate/19 ft Length (PKR)": 2318,
+          "Bundle Size": 6
+        },
+        {
+          "Code": "SP-2016",
+          "Product Description": "Sliding Net Sash Mullion 80/88 series (for fixed)",
+          "Rate/ft (PKR)": 123,
+          "Rate/19 ft Length (PKR)": 2337,
+          "Bundle Size": 6
+        }
+      ]
+    }
+  }
+}
