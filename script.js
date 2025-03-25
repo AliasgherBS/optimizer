@@ -1272,9 +1272,10 @@ function displayResults(results) {
                         
                         cuttingDiagramHtml += `</div></div>`;
                     });
-                } else {
-                    cuttingDiagramHtml += `<p>Reused material information not available for detailed visualization.</p>`;
-                }
+                } 
+                // else {
+                //     cuttingDiagramHtml += `<p>Reused material information not available for detailed visualization.</p>`;
+                // }
             });
             
             cuttingDiagramHtml += `</div>`;
