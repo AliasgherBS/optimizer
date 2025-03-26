@@ -839,9 +839,56 @@ function deleteWindow(id) {
     updateWindowConfigurationsDisplay();
 }
 
+// // Add another window and reset form
+// function addAnotherWindow() {
+//     // Reset step 2 - Outer Frame
+//     document.getElementById('outer-frame-height').value = '';
+//     document.getElementById('outer-frame-width').value = '';
+//     document.getElementById('window-type').value = '';
+//     document.getElementById('out-frame').innerHTML = '<option value="">Select Outer Frame Material</option>';
+//     document.getElementById('add-border').checked = false;
+//     document.getElementById('border-material').innerHTML = '<option value="">Select Border Material</option>';
+//     document.getElementById('border-selection').style.display = 'none';
+    
+//     // Update dropdowns
+//     updateProductDropdowns();
+    
+//     // Reset step 3 - Inner Sections
+//     document.getElementById('inner-sections-container').innerHTML = `
+//         <div class="no-sections-message">Click the "Add Section" button to add inner sections to your window.</div>
+//     `;
+    
+//     // Reset step 4 - Mullions
+//     document.getElementById('need-mullion').value = 'false';
+//     document.getElementById('mullion-configs').innerHTML = '';
+//     document.getElementById('mullion-config-container').style.display = 'none';
+    
+//     // Hide any error messages
+//     const errorMessages = document.querySelectorAll('.error-message');
+//     errorMessages.forEach(el => el.style.display = 'none');
+    
+//     // Go back to step 2 (keep company selection)
+//     hideStep(5);
+//     showStep(2);
+//     updateProgressBar(2);
+// }
+
 // Add another window and reset form
 function addAnotherWindow() {
-    // Reset step 2 - Outer Frame
+    // Save window configuration before resetting
+    updateWindowSummary();
+    
+    // First, reset to step 1 so user can select company and quantity
+    hideStep(5);
+    showStep(1);
+    updateProgressBar(1);
+    
+    // Reset step 1 - Company Selection
+    // We'll let the user select a potentially different company for the new window
+    document.getElementById('company').value = '';
+    document.getElementById('window-quantity').value = '1';
+    
+    // Clear step 2 - Outer Frame
     document.getElementById('outer-frame-height').value = '';
     document.getElementById('outer-frame-width').value = '';
     document.getElementById('window-type').value = '';
@@ -849,9 +896,6 @@ function addAnotherWindow() {
     document.getElementById('add-border').checked = false;
     document.getElementById('border-material').innerHTML = '<option value="">Select Border Material</option>';
     document.getElementById('border-selection').style.display = 'none';
-    
-    // Update dropdowns
-    updateProductDropdowns();
     
     // Reset step 3 - Inner Sections
     document.getElementById('inner-sections-container').innerHTML = `
@@ -866,11 +910,6 @@ function addAnotherWindow() {
     // Hide any error messages
     const errorMessages = document.querySelectorAll('.error-message');
     errorMessages.forEach(el => el.style.display = 'none');
-    
-    // Go back to step 2 (keep company selection)
-    hideStep(5);
-    showStep(2);
-    updateProgressBar(2);
 }
 
 // Submit window configurations for optimization
@@ -1237,7 +1276,7 @@ function displayResults(results) {
                     
                     material.reused_material.forEach((piece, idx) => {
                         const sourceIndex = material.reused_sources ? material.reused_sources[idx] : idx;
-                        const source = `Leftover ${sourceIndex + 1}`;
+                        const source = `Rod ${sourceIndex + 1}`;
                         
                         if (!reusedBySource[source]) {
                             reusedBySource[source] = [];
@@ -1252,7 +1291,7 @@ function displayResults(results) {
                         cuttingDiagramHtml += `
                             <div class="reused-container">
                                 <div class="rod-title">
-                                    ${source} - ${sourceLength.toFixed(2)} ft used
+                                    ${source} - ${sourceLength.toFixed(2)} ft reused
                                 </div>
                                 <div class="rod-visual">
                         `;
