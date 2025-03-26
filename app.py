@@ -68,37 +68,75 @@ class MaterialOptimizer:
         
         return None
 
-    def add_material(self, code: str, company: str, height: float, width: float, quantity: int, divider: float = 0):
+    def process_configurations(self, configurations: List[WindowConfiguration]):
         """
-        Add a material specification to the project
-        
-        :param code: Product code
-        :param company: Company name
-        :param height: Height of the cut piece
-        :param width: Width of the cut piece
-        :param quantity: Number of pieces to cut
-        :param divider: Length of divider (optional)
+        Process all window configurations and add necessary materials,
+        grouping them by material code for better optimization
         """
-        # Find product to verify and get pricing
-        product = self.get_product_by_code(code, company)
-        if not product:
-            raise ValueError(f"Product not found: {code} for company {company}")
+        # Group materials by code and company
+        grouped_materials = {}
         
-        material_spec = {
-            'code': code,
-            'company': company,
-            'description': product['Product Description'],
-            'height': height,
-            'width': width,
-            'divider': divider,
-            'quantity': quantity,
-            'unit_price': product['Rate/ft (PKR)'],
-            'rod_price': product['Rate/19 ft Length (PKR)']
-        }
+        for config in configurations:
+            for material in config.materials:
+                key = (material.code, config.company)
+                
+                if key not in grouped_materials:
+                    # Initialize product data first to get description and pricing
+                    product = self.get_product_by_code(material.code, config.company)
+                    if not product:
+                        raise ValueError(f"Product not found: {material.code} for company {config.company}")
+                    
+                    grouped_materials[key] = {
+                        'code': material.code,
+                        'company': config.company,
+                        'description': product['Product Description'],
+                        'pieces': [],
+                        'quantity': 0,
+                        'unit_price': product['Rate/ft (PKR)'],
+                        'rod_price': product['Rate/19 ft Length (PKR)']
+                    }
+                
+                # Add this material's pieces to the group
+                if material.height > 0 and material.width > 0:
+                    # Add height pieces
+                    for _ in range(2 * material.quantity):
+                        grouped_materials[key]['pieces'].append({
+                            'length': material.height,
+                            'type': 'height'
+                        })
+                    
+                    # Add width pieces
+                    for _ in range(2 * material.quantity):
+                        grouped_materials[key]['pieces'].append({
+                            'length': material.width,
+                            'type': 'width'
+                        })
+                
+                # Add divider pieces if any
+                if material.divider > 0:
+                    for _ in range(material.quantity):
+                        grouped_materials[key]['pieces'].append({
+                            'length': material.divider,
+                            'type': 'divider'
+                        })
+                
+                # Update total quantity
+                grouped_materials[key]['quantity'] += material.quantity
         
-        self.project_materials.append(material_spec)
-        self.material_codes_used.add(code)  # Add to unique materials set
-        return material_spec
+        # Add each grouped material to the optimizer
+        for key, data in grouped_materials.items():
+            material_spec = {
+                'code': data['code'],
+                'company': data['company'],
+                'description': data['description'],
+                'pieces': data['pieces'],
+                'quantity': data['quantity'],
+                'unit_price': data['unit_price'],
+                'rod_price': data['rod_price']
+            }
+            
+            self.project_materials.append(material_spec)
+            self.material_codes_used.add(data['code'])
 
     def optimize_cutting(self):
         """
@@ -109,34 +147,11 @@ class MaterialOptimizer:
         for material in self.project_materials:
             material_key = material['code']
             
-            # Calculate cuts for this specific material
-            total_vertical = material['height'] * 2 * material['quantity']
-            total_horizontal = material['width'] * 2 * material['quantity']
-            total_dividers = material['divider'] * material['quantity'] if material['divider'] > 0 else 0
+            # Get pieces to cut directly from the material
+            pieces_to_cut = material['pieces']
             
-            # Combine all pieces to cut in a single list
-            pieces_to_cut = []
-            
-            # Add vertical pieces (height)
-            if material['height'] > 0:
-                pieces_to_cut.extend([
-                    {'length': material['height'], 'type': 'height'} 
-                    for _ in range(2 * material['quantity'])
-                ])
-            
-            # Add horizontal pieces (width)
-            if material['width'] > 0:
-                pieces_to_cut.extend([
-                    {'length': material['width'], 'type': 'width'} 
-                    for _ in range(2 * material['quantity'])
-                ])
-            
-            # Add dividers if any
-            if material['divider'] > 0:
-                pieces_to_cut.extend([
-                    {'length': material['divider'], 'type': 'divider'} 
-                    for _ in range(material['quantity'])
-                ])
+            # Calculate total length for all pieces
+            total_length = sum(piece['length'] for piece in pieces_to_cut)
             
             # Sort pieces in descending order for better optimization
             pieces_to_cut.sort(key=lambda x: x['length'], reverse=True)
@@ -244,7 +259,6 @@ class MaterialOptimizer:
                     self.available_leftovers[material_key].append(current_rod_remaining)
             
             # Calculate total price for this material
-            total_length = total_vertical + total_horizontal + total_dividers
             total_price_per_ft = total_length * material['unit_price']
             total_rods_needed = len(rods_used)
             total_price_per_rod = total_rods_needed * material['rod_price']
@@ -292,24 +306,6 @@ class MaterialOptimizer:
         
         return project_summary
 
-    def process_configurations(self, configurations: List[WindowConfiguration]):
-        """
-        Process all window configurations and add necessary materials
-        
-        :param configurations: List of window configurations
-        """
-        for config in configurations:
-            # Process all materials in the configuration
-            for material in config.materials:
-                self.add_material(
-                    code=material.code,
-                    company=config.company,
-                    height=material.height,
-                    width=material.width,
-                    quantity=material.quantity,
-                    divider=material.divider
-                )
-
 @app.get("/")
 def home():
     return {"message": "Window Material Optimizer API is running"}
@@ -329,7 +325,7 @@ def optimize_windows(request: OptimizationRequest = Body(...)):
     try:
         optimizer = MaterialOptimizer()
         
-        # Process configurations
+        # Process configurations - this is where process_configurations is called
         optimizer.process_configurations(request.configurations)
         
         # Get optimization results
@@ -340,7 +336,7 @@ def optimize_windows(request: OptimizationRequest = Body(...)):
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-# If running as script, create the data file
+# If running as script, start the server
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
